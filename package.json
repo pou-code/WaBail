@@ -12,10 +12,10 @@
     "wa-bot",
     "whatsapp bot"
   ],
-  "homepage": "https://github.com/pou-code/Baileys",
+  "homepage": "https://github.com/pou-code/WaBail",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pou-code/Baileys.git"
+    "url": "git+https://github.com/pou-code/WaBail.git"
   },
   "license": "MIT",
   "author": "PouCode",
@@ -144,7 +144,7 @@
     "node": ">=20.0.0"
   },
   "bugs": {
-    "url": "https://github.com/pou-code/Baileys/issues"
+    "url": "https://github.com/pou-code/WaBail/issues"
   },
   "contributors": [
     "WhiskeySockets (original Baileys authors)"

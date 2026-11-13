@@ -1,8 +1,8 @@
 {
   "name": "@poucode/baileys",
   "type": "module",
-  "version": "1.0.0",
-  "description": "A WebSockets library for interacting with WhatsApp Web \u2014 PouCode fork of Baileys",
+  "version": "1.0.1",
+  "description": "A WebSockets library for interacting with WhatsApp Web — PouCode fork of Baileys",
   "keywords": [
     "poucode",
     "baileys",

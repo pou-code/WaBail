@@ -18,7 +18,10 @@ test('core public exports are present', () => {
         'Browsers',
         'DisconnectReason',
         'jidDecode',
-        'isInteropUser'
+        'isInteropUser',
+        'useSqliteAuthState',
+        'buildZipArchive',
+        'USyncQuery'
     ]) {
         assert.notEqual(baileys[name], undefined, `missing export: ${name}`);
     }

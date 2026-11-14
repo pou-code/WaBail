@@ -36,7 +36,7 @@ npm install github:pou-code/Baileys
 Or add it to your `package.json` manually:
 ```json
 "dependencies": {
-  "@poucode/baileys": "github:pou-code/Baileys"
+  "@poucode/baileys": "latest"
 }
 ```
 
@@ -45,7 +45,7 @@ Already have a bot built on the original `@whiskeysockets/baileys` and don't wan
 name points to this fork:
 ```json
 "dependencies": {
-  "@whiskeysockets/baileys": "github:pou-code/Baileys"
+  "@whiskeysockets/baileys": "npm:poucode/baileys"
 }
 ```
 With this alias, keep using `require('@whiskeysockets/baileys')` in your code as-is — npm will
@@ -417,6 +417,25 @@ await client.statusMention(m.chat, {
 ```
 
 ---
+
+# Merged Features (1.1.0)
+
+WaBail 1.1.0 merges the extra layers of the `wbails` fork on top of the PouCode core:
+
+- `sock.*` privacy, interop, GraphQL/Wamo and message-builder layers (see `lib/Socket/privacy.js`, `interop.js`, `graphql.js`, `message-builder.js`)
+- Extra USync protocols: business, picture, text status, sidelist, feature (`lib/WAUSync/`)
+- Sticker pack messages (`{ stickerPacks: {...} }`) and sticker metadata helpers (`lib/Utils/sticker.js`, needs `ffmpeg` in `PATH` for sticker conversion)
+- `useSqliteAuthState` (needs Node 22.5+ because it uses `node:sqlite`; loaded lazily, so Node 20 is unaffected unless you call it)
+- `makeInMemoryStore` persistence helpers: `writeToFile`, `readFromFile`, `writeToFileInterval`
+- 1:1 `cstoken` fallback: stores the NCT salt from app-state sync and attaches `cstoken` on private sends that have no `tctoken`. Disable per message with `{ cstoken: false }`.
+
+The newsletter implementation is the one from WaBail (`lib/Socket/newsletter.js`) and is used unchanged.
+
+## Private chat vs group notes
+
+- Reply to `msg.key.remoteJid` as-is. In private chats it can be `@lid`; the phone-number form is in `msg.key.remoteJidAlt`.
+- In groups the sender is `msg.key.participant` (alt in `msg.key.participantAlt`).
+- If a send to a user cannot resolve any of the recipient's devices, `relayMessage` now throws `421` instead of silently reporting success.
 
 # Credits
 

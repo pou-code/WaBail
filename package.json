@@ -1,8 +1,8 @@
 {
   "name": "@poucode/baileys",
   "type": "module",
-  "version": "1.0.2",
-  "description": "A WebSockets library for interacting with WhatsApp Web — PouCode fork of Baileys",
+  "version": "2.0.0",
+  "description": "WaBail — PouCode fork of Baileys: WhatsApp Web WebSocket library with merged extra socket layers (privacy, interop, GraphQL, message builder), sticker packs and SQLite auth state",
   "keywords": [
     "poucode",
     "baileys",
@@ -10,7 +10,9 @@
     "whatsapp-api",
     "whatsapp-web",
     "wa-bot",
-    "whatsapp bot"
+    "whatsapp bot",
+    "wabail",
+    "whatsapp-bot"
   ],
   "homepage": "https://github.com/pou-code/WaBail",
   "repository": {
